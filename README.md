@@ -40,7 +40,7 @@ Want to run this project locally?
 
 ```bash
 # 1. Clone the repo
-git clone [https://github.com/Ishu38/edge-arena.git](https://github.com/Ishu38/edge-arena.git)
+git clone https://github.com/Ishu38/edge-arena.git
 
 # 2. Install dependencies
 cd edge-arena
