@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ⚡ Edge Arena
 
-## Getting Started
+### Find the perfect Small Language Model (SLM) for your laptop.
 
-First, run the development server:
+[![Vercel](https://therealsujitk-vercel-badge.vercel.app/?app=edge-arena)](https://edge-arena.vercel.app/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Next.js](https://img.shields.io/badge/Built%20with-Next.js-black)](https://nextjs.org)
+
+**[🔴 Live Demo](https://edge-arena.vercel.app/)**
+
+---
+
+## 🧐 Why Edge Arena?
+
+Running AI locally is confusing.
+- *"Will Llama-3 run on my 16GB MacBook?"*
+- *"Can I use Phi-3 for a commercial startup?"*
+- *"What is the exact Ollama command to run Mistral?"*
+
+**Edge Arena** answers these questions in seconds. It is a clean, noise-free dashboard designed for developers who want to **run** models, not just read research papers.
+
+## ✨ Features
+
+- **🚀 One-Click Run:** Instantly copy the `ollama run` command for any model.
+- **⚖️ License Filter:** Toggle between "All", "Apache 2.0" (Commercial), and "Research Only" models.
+- **📊 Visual Benchmarks:** See MMLU and HellaSwag scores at a glance.
+- **🏷️ Hardware Tags:** Know immediately if a model is for "IoT", "Mobile", or "Edge".
+- **⚡ Zero-Latency:** Built on Next.js for instant page loads.
+
+## 🛠️ Tech Stack
+
+- **Framework:** [Next.js 14](https://nextjs.org/) (App Router)
+- **Styling:** Tailwind CSS
+- **Deployment:** Vercel
+- **Icons:** Lucide React
+
+## 🚀 Getting Started
+
+Want to run this project locally?
 
 ```bash
+# 1. Clone the repo
+git clone https://github.com/Ishu38/edge-arena.git
+
+# 2. Install dependencies
+cd edge-arena
+npm install
+
+# 3. Run the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
