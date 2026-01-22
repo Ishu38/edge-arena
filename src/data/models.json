@@ -1,0 +1,110 @@
+[
+  {
+    "id": "phi-3-mini",
+    "name": "Phi-3 Mini",
+    "provider": "Microsoft",
+    "parameters": "3.8B",
+    "contextLength": 4096,
+    "quantization": "Q4_K_M",
+    "license": "MIT",
+    "bestFor": "Reasoning",
+    "ollamaCommand": "ollama run phi3",
+    "benchmarks": {
+      "mmlu": 68.8,
+      "hellaswag": 76.7,
+      "arc": 84.9
+    },
+    "tags": ["reasoning", "instruction", "compact"],
+    "description": "Microsoft's compact powerhouse optimized for complex reasoning tasks with exceptional performance-to-size ratio."
+  },
+  {
+    "id": "llama-3-8b",
+    "name": "Llama 3 8B",
+    "provider": "Meta",
+    "parameters": "8B",
+    "contextLength": 8192,
+    "quantization": "Q4_K_M",
+    "license": "Commercial",
+    "bestFor": "General Purpose",
+    "ollamaCommand": "ollama run llama3",
+    "benchmarks": {
+      "mmlu": 66.6,
+      "hellaswag": 82.0,
+      "arc": 78.6
+    },
+    "tags": ["general-purpose", "versatile", "popular"],
+    "description": "Meta's flagship open model delivering strong all-around performance for diverse applications."
+  },
+  {
+    "id": "gemma-2b",
+    "name": "Gemma 2B",
+    "provider": "Google",
+    "parameters": "2B",
+    "contextLength": 8192,
+    "quantization": "Q5_K_M",
+    "license": "Apache 2.0",
+    "bestFor": "Mobile",
+    "ollamaCommand": "ollama run gemma:2b",
+    "benchmarks": {
+      "mmlu": 42.3,
+      "hellaswag": 71.4,
+      "arc": 73.2
+    },
+    "tags": ["mobile", "lightweight", "efficient"],
+    "description": "Google's ultra-efficient model designed specifically for mobile and resource-constrained deployments."
+  },
+  {
+    "id": "mistral-7b",
+    "name": "Mistral 7B",
+    "provider": "Mistral AI",
+    "parameters": "7B",
+    "contextLength": 32768,
+    "quantization": "Q4_K_M",
+    "license": "Apache 2.0",
+    "bestFor": "Creative Writing",
+    "ollamaCommand": "ollama run mistral",
+    "benchmarks": {
+      "mmlu": 62.5,
+      "hellaswag": 81.3,
+      "arc": 78.1
+    },
+    "tags": ["creative", "long-context", "storytelling"],
+    "description": "Mistral's breakthrough model with sliding window attention, excelling at creative and narrative tasks."
+  },
+  {
+    "id": "qwen-1.5-7b",
+    "name": "Qwen 1.5 7B",
+    "provider": "Alibaba",
+    "parameters": "7B",
+    "contextLength": 32768,
+    "quantization": "Q4_K_M",
+    "license": "Apache 2.0",
+    "bestFor": "Math/Code",
+    "ollamaCommand": "ollama run qwen:7b",
+    "benchmarks": {
+      "mmlu": 61.0,
+      "hellaswag": 78.5,
+      "arc": 75.2
+    },
+    "tags": ["math", "code", "multilingual"],
+    "description": "Alibaba's multilingual model with exceptional mathematical reasoning and code generation abilities."
+  },
+  {
+    "id": "tinyllama-1.1b",
+    "name": "TinyLlama 1.1B",
+    "provider": "Open Source",
+    "parameters": "1.1B",
+    "contextLength": 2048,
+    "quantization": "Q8_0",
+    "license": "MIT",
+    "bestFor": "IoT Devices",
+    "ollamaCommand": "ollama run tinyllama",
+    "benchmarks": {
+      "mmlu": 25.3,
+      "hellaswag": 59.2,
+      "arc": 55.4
+    },
+    "tags": ["tiny", "iot", "edge"],
+    "description": "Community-driven ultra-compact model trained on 3 trillion tokens, perfect for IoT and embedded systems."
+  }
+]
