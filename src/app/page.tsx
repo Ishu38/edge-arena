@@ -11,6 +11,20 @@ import models from "@/data/models.json";
 type LicenseFilter = "All" | "MIT" | "Apache 2.0" | "Commercial";
 type SortOrder = "smallest" | "largest";
 
+const ramRequirements: Record<string, number> = {
+  "tinyllama-1.1b": 4,
+  "gemma-2b": 4,
+  "phi-3-mini": 8,
+  "mistral-7b": 8,
+  "qwen-1.5-7b": 16,
+  "llama-3-8b": 16,
+};
+
+const modelsWithRam = (models as AIModel[]).map((model) => ({
+  ...model,
+  minRam: ramRequirements[model.id] || 8,
+}));
+
 function parseParameters(params: string): number {
   const match = params.match(/([\d.]+)/);
   return match ? parseFloat(match[1]) : 0;
@@ -19,18 +33,21 @@ function parseParameters(params: string): number {
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
   const [licenseFilter, setLicenseFilter] = useState<LicenseFilter>("All");
+  const [selectedRam, setSelectedRam] = useState("all");
   const [sortOrder, setSortOrder] = useState<SortOrder>("smallest");
   const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
   const [isCompareModalOpen, setIsCompareModalOpen] = useState(false);
 
   const filteredAndSortedModels = useMemo(() => {
-    const result = (models as AIModel[]).filter((model) => {
+    const result = modelsWithRam.filter((model) => {
       const matchesSearch = model.name
         .toLowerCase()
         .includes(searchQuery.toLowerCase());
       const matchesLicense =
         licenseFilter === "All" || model.license === licenseFilter;
-      return matchesSearch && matchesLicense;
+      const matchesRam =
+        selectedRam === "all" || model.minRam <= parseInt(selectedRam);
+      return matchesSearch && matchesLicense && matchesRam;
     });
 
     result.sort((a, b) => {
@@ -40,7 +57,7 @@ export default function Home() {
     });
 
     return result;
-  }, [searchQuery, licenseFilter, sortOrder]);
+  }, [searchQuery, licenseFilter, selectedRam, sortOrder]);
 
   const selectedModels = useMemo(() => {
     return (models as AIModel[]).filter((model) => selectedIds.has(model.id));
@@ -114,6 +131,21 @@ export default function Home() {
                 <option value="MIT">MIT</option>
                 <option value="Apache 2.0">Apache 2.0</option>
                 <option value="Commercial">Commercial</option>
+              </select>
+              <ChevronDown className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-zinc-400" />
+            </div>
+
+            {/* RAM Filter Dropdown */}
+            <div className="relative">
+              <select
+                value={selectedRam}
+                onChange={(e) => setSelectedRam(e.target.value)}
+                className="appearance-none rounded-lg border border-zinc-300 bg-white py-2 pl-4 pr-10 text-sm text-zinc-900 focus:border-zinc-500 focus:outline-none focus:ring-1 focus:ring-zinc-500 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100"
+              >
+                <option value="all">Any RAM</option>
+                <option value="4">4GB RAM</option>
+                <option value="8">8GB RAM</option>
+                <option value="16">16GB+ RAM</option>
               </select>
               <ChevronDown className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-zinc-400" />
             </div>
