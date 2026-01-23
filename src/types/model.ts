@@ -5,6 +5,7 @@ export interface AIModel {
   parameters: string;
   contextLength: number;
   quantization: string;
+  storage: string;
   license: "MIT" | "Apache 2.0" | "Commercial";
   bestFor: string;
   ollamaCommand: string;

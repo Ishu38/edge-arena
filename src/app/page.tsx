@@ -143,9 +143,9 @@ export default function Home() {
                 className="appearance-none rounded-lg border border-zinc-300 bg-white py-2 pl-4 pr-10 text-sm text-zinc-900 focus:border-zinc-500 focus:outline-none focus:ring-1 focus:ring-zinc-500 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100"
               >
                 <option value="all">Any RAM</option>
-                <option value="4">4GB RAM</option>
-                <option value="8">8GB RAM</option>
-                <option value="16">16GB+ RAM</option>
+                <option value="4">4GB (Basic Laptops / Mobile)</option>
+                <option value="8">8GB (Standard Laptops)</option>
+                <option value="16">16GB+ (Pro / Gaming)</option>
               </select>
               <ChevronDown className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-zinc-400" />
             </div>
